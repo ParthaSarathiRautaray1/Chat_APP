@@ -2,14 +2,13 @@ services:
   - type: web
     name: chatapp-backend
     env: node
+    nodeVersion: 18.18.0
     buildCommand: cd backend && npm install
     startCommand: cd backend && node index.js
     envVars:
       - key: PORT
         value: 8000
       - key: MONGO_URI
-        fromDatabase:
-          name: mongodb
-          property: connectionString
+        value: mongodb+srv://parthasarathirautaray176:HcnN9Zur30apblbb@cluster0.2erhwcn.mongodb.net/
       - key: JWT_SECRET_KEY
-        generateValue: true
+        value: KDLSDFLKSJDLGKSAJKJDKFS
